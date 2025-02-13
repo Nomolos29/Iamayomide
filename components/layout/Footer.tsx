@@ -56,7 +56,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className='w-full bg-black flex justify-center h-fit py-10 md:h-[250px] pl-10 items-center overflow-hidden relative'>
+    <footer className='w-full bg-red-800 flex justify-center h-fit py-10 md:h-[250px] pl-10 items-center overflow-hidden relative'>
         <main className='max-w-[1440px] w-full margin-auto pt-2 flex justify-between items-center text-white'>
           <section className='flex flex-col w-full md:w-[50%] md:flex-row justify-between md:items-center gap-10 md:gap-x-20'>
             <Link href="/" className='w-[50%] md:w-[40%]'>

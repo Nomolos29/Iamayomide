@@ -23,11 +23,11 @@ const Header: React.FC = () => {
 
   return (
     <header className="w-full bg-[#ffffffe5] flex justify-center items-center z-50 sticky top-0">
-      <main className="max-w-[1440px] w-full margin-auto flex justify-between h-[80px] items-center px-5 md:px-10 overflow-x-hidden sticky top-0">
+      <main className="max-w-[1440px] w-full margin-auto flex justify-between items-center px-5 md:px-10 overflow-x-hidden sticky top-0">
         {/* Company Logo */}
-        <Link href="/" className="w-[10%]">
-          <div>
-            
+        <Link href="/" className="w-[12%]">
+          <div className="flex items-center text-lg">
+            <div className="h-10 w-10 rounded-full bg-red-500 text-white flex justify-center items-center">Iam</div>theayomide
           </div>
         </Link>
 
@@ -37,10 +37,10 @@ const Header: React.FC = () => {
             <Link
               key={index}
               href={menu.navURL}
-              className={`text-[18px] px-2 ${
+              className={`text-[18px] px-2 py-6 border-b-[3px] ${
                 pathname === menu.navURL
-                  ? "border-[#FFB100] text-[#FFB100]" // Active link styles
-                  : "border-transparent text-black hover:border-[#FFB100] hover:text-[#FFB100] cursor-pointer" // Non-active hover styles
+                  ? "border-red-700 border-b-[3px] text-red-500" // Active link styles
+                  : "border-transparent text-black hover:border-red-700 hover:border-b-[3px] hover:text-red-500 cursor-pointer" // Non-active hover styles
               }`}
             >
               {menu.name}
