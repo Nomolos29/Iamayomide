@@ -24,7 +24,7 @@ export default function Home() {
         <aside className="w-1/2 flex flex-col gap-y-20">
           <div className="flex flex-col gap-y-6 w-full">
             <h1 className="text-[60px] font-extrabold">Hello, I&apos;m <span className="text-[90px] leading-none">A</span>yomide <br /><span className="text-[90px] leading-none">A</span>rowolo-<span className="text-[90px] leading-none">A</span>yodeji</h1>
-            <p className="text-xl text-[#5a5a5a]">I&apos;m an EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities.</p>
+            <p className="text-xl">I&apos;m an EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities.</p>
           </div>
 
         </aside>

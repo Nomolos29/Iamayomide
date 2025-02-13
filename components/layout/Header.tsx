@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-x-5">
           <Link
             href="/" // Redirect to the relevant page
-            className="px-4 md:px-8 py-2 bg-gradient-to-r from-[#F8B51C] to-[#FEE539] text-black text-md md:text-lg font-semibold rounded-lg hover:bg-[#e69c00]"
+            className="py-2 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white"
           >
             Join Us
           </Link>
