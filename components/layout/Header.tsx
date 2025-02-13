@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/public/next.svg";
+// import logo from "@/public/next.svg";
 import { usePathname } from "next/navigation";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 

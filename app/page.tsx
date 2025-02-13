@@ -23,8 +23,8 @@ export default function Home() {
       <section className="flex justify-between items-center max-w-[1440px] w-full py-20 px-10 bg-slate-50">
         <aside className="w-1/2 flex flex-col gap-y-20">
           <div className="flex flex-col gap-y-6 w-full">
-            <h1 className="text-[60px] font-extrabold">Hello, I'm <div className="bg-gradient-to-br from-[#000000] via-[#a0a0a0f5] to-[#9c0000] bg-clip-text"><h1 className="text-transparent text-[58px] leading-tight"><span className="text-[90px] leading-none">A</span>yomide <br /><span className="text-[90px] leading-none">A</span>rowolo-<span className="text-[90px] leading-none">A</span>yodeji</h1></div></h1>
-            <p className="text-xl text-[#5a5a5a]">I'm an EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities.</p>
+            <h1 className="text-[60px] font-extrabold">Hello, I&apos;m <div className="bg-gradient-to-br from-[#000000] via-[#a0a0a0f5] to-[#9c0000] bg-clip-text"><h1 className="text-transparent text-[58px] leading-tight"><span className="text-[90px] leading-none">A</span>yomide <br /><span className="text-[90px] leading-none">A</span>rowolo-<span className="text-[90px] leading-none">A</span>yodeji</h1></div></h1>
+            <p className="text-xl text-[#5a5a5a]">I&apos;m an EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities.</p>
           </div>
 
         </aside>
@@ -55,7 +55,7 @@ export default function Home() {
           <div className="flex flex-col gap-y-8">
             <h1 className="text-[40px] leading-none">About Me</h1>
             <span className="h-1 w-[100px] bg-yellow-500">.</span>
-            <p className="text-lg text-[#a0a0a0] line-clamp-[7]">As the founder of Know the Blocks Maven (KBM), she leads transformative initiatives that integrate AI, blockchain, and Web3 literacy into traditional education systems, empowering over 10,500 students (and counting) across Africa. Through strategic collaborations, including partnerships with the Nigerian government and the Los Angeles School District's STEM Literacy Editorial Exchange Program, Ayo pioneers efforts to bridge the digital divide and foster financial inclusion across Africa. She is also the first Web3 educator to organize a self-funded Web3 Educational Exposition for underserved communities, introducing emerging technologies to students in government senior secondary schools.</p>
+            <p className="text-lg text-[#a0a0a0] line-clamp-[7]">As the founder of Know the Blocks Maven (KBM), she leads transformative initiatives that integrate AI, blockchain, and Web3 literacy into traditional education systems, empowering over 10,500 students (and counting) across Africa. Through strategic collaborations, including partnerships with the Nigerian government and the Los Angeles School District&apos;s STEM Literacy Editorial Exchange Program, Ayo pioneers efforts to bridge the digital divide and foster financial inclusion across Africa. She is also the first Web3 educator to organize a self-funded Web3 Educational Exposition for underserved communities, introducing emerging technologies to students in government senior secondary schools.</p>
             <div className="flex gap-x-10">
               <button type="button" className="py-2 px-6 bg-gradient-to-r from-yellow-500 to-yellow-300 text-lg font-medium rounded-md">Contact Me</button>
               <button type="button" className="py-2 px-6 bg-gradient-to-r from-yellow-500 to-yellow-300 text-lg font-medium rounded-md">Read More</button>
