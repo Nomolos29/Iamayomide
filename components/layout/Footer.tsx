@@ -1,6 +1,5 @@
-import Image from 'next/image'
-// import footerBg from "@/public/vercel.svg";
 import Link from 'next/link';
+
 
 const Footer = () => {
 
