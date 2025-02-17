@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import React from "react";
 import Link from "next/link";
 
@@ -8,16 +9,16 @@ export default function Home() {
 
   const stats = [
     {
-      number: "20k+",
-      name: "Students"
+      number: "10k+",
+      name: "plus students impacted"
     },
     {
       number: "20k+",
-      name: "Students"
+      name: "community members"
     },
     {
-      number: "20k+",
-      name: "Students"
+      number: "10+",
+      name: "projects completed"
     }
   ]
 
@@ -32,12 +33,12 @@ export default function Home() {
       link: "#"
     },
     {
-      icon: <FaFacebook />,
-      link: "#"
+      icon: <FaLinkedin />,
+      link: "https://www.linkedin.com/in/ayomidearowoloayodeji?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     {
-      icon: <FaFacebook />,
-      link: "#"
+      icon: <FaSquareXTwitter />,
+      link: "https://x.com/knowtheblocks_?t=VNjLr__AVfJPoU219GCj1w&s=08"
     },
     {
       icon: <FaFacebook />,
@@ -47,11 +48,21 @@ export default function Home() {
 
   return (
     <main className="w-full flex flex-col justify-center items-center">
-      <section className="flex justify-between items-center max-w-[1440px] w-full px-10 bg-blue-100">
+      <section className="flex justify-between items-center max-w-[1440px] w-full px-10 bg-blue-50">
         <aside className="w-1/2 flex flex-col gap-y-20">
           <div className="flex flex-col gap-y-6 w-full">
-            <h1 className="text-[60px] font-extrabold">Hello, I&apos;m <span className="text-[90px] leading-none">A</span>yomide <br /><span className="text-[90px] leading-none">A</span>rowolo-<span className="text-[90px] leading-none">A</span>yodeji</h1>
+            <h3 className="text-[40px] font-extrabold text-red-700 leading-none">Hello, I&apos;m <br /></h3>
+            <h1 className="text-[60px] font-extrabold leading-none"><span className="text-[90px] leading-none">A</span>yomide <br /><span className="text-[90px] leading-none">A</span>rowolo-<span className="text-[80px] leading-none">A</span>yodeji</h1>
             <p className="text-xl">I&apos;m an EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities.</p>
+
+            <div className="flex gap-x-5">
+            <Link
+              href="https://outlook.office.com/bookwithme/user/7d3c3f6ee4e9414296cdcdc8704495b6@gse.harvard.edu?anonymous&ep=plink" target="_blank"
+            >
+              <button type="button" className="py-4 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white">Book Appointment</button>
+            </Link>
+              <button type="button" className="py-2 px-8 text-lg font-medium rounded-md border-2 border-red-700">Read More</button>
+            </div>
           </div>
 
         </aside>
@@ -59,11 +70,11 @@ export default function Home() {
       </section>
 
       <section className="flex justify-between items-center max-w-[1440px] w-full px-10 -mt-20">
-        <div className="w-full bg-white shadow-2xl shadow-gray-200 rounded-lg backdrop-blur-md h-[180px] flex justify-between items-center">
+        <div className="w-full bg-white shadow-2xl shadow-gray-200 rounded-lg backdrop-blur-md h-[180px] flex justify-between items-center overflow-hidden">
           {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center text-center w-1/3">
+            <div key={index} className={`flex flex-col items-center justify-center text-center w-1/3 gap-y-3 h-full ${index == 0 ? "bg-red-200" : index == 1 ? "bg-blue-100" : "bg-white"}`}>
               <h5 className="text-5xl font-bold text-red-700">{stat.number}</h5>
-              <p className="text-lg">{stat.name}</p>
+              <p className="text-xl capitalize font-medium">{stat.name}</p>
             </div>
           ))}
         </div>
@@ -73,9 +84,9 @@ export default function Home() {
         <div className="relative w-[300px] flex">
           <div className="relative z-10">
             <img src="/personalImage2.jpeg" alt="Image" width={0} height={0} className="h-[500px] w-[300px] bg-white backdrop-blur-sm rounded-lg shadow-md" />
-            <div className="w-[50px] h-[150px] flex flex-col justify-between items-center p-3 absolute bg-[#ffffff94] top-0 rounded-lg backdrop-blur-lg">
+            <div className="w-[50px] h-[180px] flex flex-col justify-between items-center absolute bg-red-300/20 top-0 rounded-tl-md backdrop-blur-lg overflow-hidden">
               {socialIcons.map((social, index) => (
-                <Link href={social.link} key={index}>{social.icon}</Link>
+                <Link href={social.link} key={index} target="_blank" className="text-2xl flex justify-center items-center text-white hover:bg-red-400/50 h-1/4 w-full">{social.icon}</Link>
               ))}
             </div>
           </div>
@@ -88,7 +99,11 @@ export default function Home() {
             <span className="h-1 w-[100px] bg-red-700">.</span>
             <p className="text-lg line-clamp-[7]">As the founder of Know the Blocks Maven (KBM), she leads transformative initiatives that integrate AI, blockchain, and Web3 literacy into traditional education systems, empowering over 10,500 students (and counting) across Africa. Through strategic collaborations, including partnerships with the Nigerian government and the Los Angeles School District&apos;s STEM Literacy Editorial Exchange Program, Ayo pioneers efforts to bridge the digital divide and foster financial inclusion across Africa. She is also the first Web3 educator to organize a self-funded Web3 Educational Exposition for underserved communities, introducing emerging technologies to students in government senior secondary schools.</p>
             <div className="flex gap-x-5">
-              <button type="button" className="py-4 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white">Contact Me</button>
+              <Link
+                href="https://outlook.office.com/bookwithme/user/7d3c3f6ee4e9414296cdcdc8704495b6@gse.harvard.edu?anonymous&ep=plink" target="_blank"
+              >
+                <button type="button" className="py-4 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white">Book Appointment</button>
+              </Link>
               <button type="button" className="py-2 px-8 text-lg font-medium rounded-md border-2 border-red-700">Read More</button>
             </div>
           </div>
@@ -144,21 +159,25 @@ export default function Home() {
           <h1 className="text-[34px]">Contact Me</h1>
           <form className="flex flex-col gap-5">
             <div className="flex gap-5">
-              <input type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] border px-2 py-2 rounded-md" />
+              <input required type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md" />
 
-              <input type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] border px-2 py-2 rounded-md" />
+              <input required type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md" />
             </div>
 
-            <input type="email" name="" id="" placeholder="Email Address" className="border-[#d2d2d2] border px-2 py-1 rounded-md w-full" />
+            <input required type="email" name="" id="" placeholder="Email Address" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md w-full" />
 
-            <textarea name="" id="" rows={5} placeholder="Message" className="border-[#d2d2d2] border p-2 rounded-md"></textarea>
+            <input required type="text" name="" id="" placeholder="Location" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md w-full" />
+
+            <textarea name="" id="" rows={5} required placeholder="Reason for contacting" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border p-2 rounded-md"></textarea>
           </form>
 
-          <div className="h-[150px] flex justify-between items-center p-3 gap-5">
+          <div className="h-[50px] flex justify-between items-center p-3 gap-5">
             {socialIcons.map((social, index) => (
               <Link href={social.link} key={index} className="text-2xl text-red-700">{social.icon}</Link>
             ))}
           </div>
+
+          <div className="h-[2px] w-20 bg-red-700"></div>
         </div>
       </section>
     </main>

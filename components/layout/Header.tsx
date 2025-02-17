@@ -51,10 +51,10 @@ const Header: React.FC = () => {
         {/* Join Us Button */}
         <div className="flex items-center gap-x-5">
           <Link
-            href="/" // Redirect to the relevant page
+            href="https://outlook.office.com/bookwithme/user/7d3c3f6ee4e9414296cdcdc8704495b6@gse.harvard.edu?anonymous&ep=plink" target="_blank" // Redirect to the relevant page
             className="py-2 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white"
           >
-            Join Us
+            Book an Appointment
           </Link>
 
           <AiOutlineMenuFold className={`text-4xl md:hidden ${opened && "rotate-180"} duration-300`} onClick={() => setOpened(true)} />
