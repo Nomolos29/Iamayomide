@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import logo from "@/public/next.svg";
-import footerBg from "@/public/vercel.svg";
+// import footerBg from "@/public/vercel.svg";
 import Link from 'next/link';
 
 const Footer = () => {
@@ -58,12 +57,16 @@ const Footer = () => {
   return (
     <footer className='w-full bg-red-800 flex justify-center h-fit py-10 md:h-[250px] pl-10 items-center overflow-hidden relative'>
         <main className='max-w-[1440px] w-full margin-auto pt-2 flex justify-between items-center text-white'>
-          <section className='flex flex-col w-full md:w-[50%] md:flex-row justify-between md:items-center gap-10 md:gap-x-20'>
-            <Link href="/" className='w-[50%] md:w-[40%]'>
-              <Image src={logo} alt='KBM Logo' width={0} height={0} className='w-full' />
-            </Link>
+          <section className='flex flex-col w-full md:flex-row justify-between md:items-center gap-10 md:gap-x-20'>
+            <div className='flex flex-col w-1/2'>
+              <Link href="/" className="w-full">
+                <div className="flex items-center text-3xl">
+                  <div className="h-20 w-20 rounded-full bg-red-500 text-white flex justify-center items-center">Iam</div>theayomide
+                </div>
+              </Link>
+            </div>
 
-            <div className='flex flex-col md:flex-row w-full pt-5 md:pt-0 gap-7 md:gap-16'>
+            <div className='flex flex-col md:flex-row w-1/2 pt-5 md:pt-0 gap-7 md:gap-16'>
               {navMenu.map((Category, index) => (
                 <div key={index}>
                   <h4 className='font-semibold text-lg pb-2'>{Category.name}</h4>
@@ -75,9 +78,6 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-          </section>
-          <section className='flex absolute top-0 md:relative'>
-            <Image src={footerBg} alt="Footer Background Image" width={0} height={0} className='' />
           </section>
         </main>
     </footer>

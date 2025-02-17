@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { FaFacebook } from "react-icons/fa";
+import React from "react";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -15,6 +18,30 @@ export default function Home() {
     {
       number: "20k+",
       name: "Students"
+    }
+  ]
+
+  type SocialIconProp = {
+    icon: React.ReactNode;
+    link: string;
+  };
+
+  const socialIcons: SocialIconProp[] = [
+    {
+      icon: <FaFacebook />,
+      link: "#"
+    },
+    {
+      icon: <FaFacebook />,
+      link: "#"
+    },
+    {
+      icon: <FaFacebook />,
+      link: "#"
+    },
+    {
+      icon: <FaFacebook />,
+      link: "#"
     }
   ]
 
@@ -46,7 +73,11 @@ export default function Home() {
         <div className="relative w-[300px] flex">
           <div className="relative z-10">
             <img src="/personalImage2.jpeg" alt="Image" width={0} height={0} className="h-[500px] w-[300px] bg-white backdrop-blur-sm rounded-lg shadow-md" />
-            <div className="w-[50px] h-[150px] flex flex-col justify-between items-center p-3 absolute bg-[#ffffff94] top-0 rounded-lg backdrop-blur-lg"></div>
+            <div className="w-[50px] h-[150px] flex flex-col justify-between items-center p-3 absolute bg-[#ffffff94] top-0 rounded-lg backdrop-blur-lg">
+              {socialIcons.map((social, index) => (
+                <Link href={social.link} key={index}>{social.icon}</Link>
+              ))}
+            </div>
           </div>
           <div className="h-[500px] w-[300px] border-red-700 border-[5px] absolute top-8 left-8 rounded-md"></div>
         </div>
@@ -98,6 +129,37 @@ export default function Home() {
             <p className="text-xl text-[#5a5a5a]">First Female educator in Nigeria to be inducted into the DKG, a strong platform of women educators in the USA collaborating on ways to make an impact in the world of education by providing support or service to active teachers, shaping educational policy at the state level, and connecting international women educators, while pioneering the first chapter in Nigeria.</p>
           </div>
         </aside>
+      </section>
+
+      <section className="flex justify-center items-center max-w-[1440px] w-full py-20 px-10 bg-white">
+        <div className="border-[2px] border-red-700 rounded-lg w-2/3 flex flex-col gap-y-10 p-10 pr-[300px]">
+          <h2 className="text-[60px] font-extrabold">As KBM Founder</h2>
+          <p className="">
+            
+            My passion in founding KBM stems from a personal and professional commitment to leveraging educational technology for social impact. As an EdTech educator and AI literacy advocate, I have seen how disparities in technological education not only limit career aspirations but also hinder personal and cognitive development. 
+            I already understand that access to emerging technologies is not just about infrastructure but also about fostering a mindset shift. Many students in underserved communities face structural and psychological barriers that limit their ability to see themselves as future professionals in these technologies. Additionally, career development interventions often focus on traditional pathways without fully considering how digital transformation is reshaping job markets.
+          </p>
+        </div>
+        <div className="bg-white rounded-md shadow-2xl my-10 border-b-[2px] border-red-700 w-fit p-10 -ml-[200px] flex flex-col items-center gap-5">
+          <h1 className="text-[34px]">Contact Me</h1>
+          <form className="flex flex-col gap-5">
+            <div className="flex gap-5">
+              <input type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] border px-2 py-2 rounded-md" />
+
+              <input type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] border px-2 py-2 rounded-md" />
+            </div>
+
+            <input type="email" name="" id="" placeholder="Email Address" className="border-[#d2d2d2] border px-2 py-1 rounded-md w-full" />
+
+            <textarea name="" id="" rows={5} placeholder="Message" className="border-[#d2d2d2] border p-2 rounded-md"></textarea>
+          </form>
+
+          <div className="h-[150px] flex justify-between items-center p-3 gap-5">
+            {socialIcons.map((social, index) => (
+              <Link href={social.link} key={index} className="text-2xl text-red-700">{social.icon}</Link>
+            ))}
+          </div>
+        </div>
       </section>
     </main>
   );
