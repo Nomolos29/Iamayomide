@@ -16,18 +16,18 @@ const Header: React.FC = () => {
   // Define the navigation menu
   const navMenu = [
     { name: "Home", navURL: "/" },
-    { name: "More About Me", navURL: "/about_us" },
+    { name: "More About Me", navURL: "/more-about-me" },
     // { name: "Our Mission", navURL: "#" },
     { name: "Contact Us", navURL: "/contact_us" },
   ];
 
   return (
-    <header className="w-full bg-[#ffffffe5] flex justify-center items-center z-50 sticky top-0">
+    <header className="w-full bg-[#ffffffb0] flex justify-center items-center z-50 sticky top-0 backdrop-blur-md py-4">
       <main className="max-w-[1440px] w-full margin-auto flex justify-between items-center px-5 md:px-10 overflow-x-hidden sticky top-0">
         {/* Company Logo */}
-        <Link href="/" className="w-[12%]">
+        <Link href="/" className="w-auto md:w-[250] lg:w-[12%]">
           <div className="flex items-center text-lg">
-            <div className="h-10 w-10 rounded-full bg-red-500 text-white flex justify-center items-center">Iam</div>theayomide
+            <div className="h-10 w-10 rounded-full bg-red-700 text-white flex justify-center items-center">Iam</div>theayomide
           </div>
         </Link>
 
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
               href={menu.navURL}
               className={`text-[18px] px-2 py-6 border-b-[3px] ${
                 pathname === menu.navURL
-                  ? "border-red-700 border-b-[3px] text-red-500" // Active link styles
+                  ? "border-red-700 border-b-[3px] text-red-700" // Active link styles
                   : "border-transparent text-black hover:border-red-700 hover:border-b-[3px] hover:text-red-500 cursor-pointer" // Non-active hover styles
               }`}
             >
@@ -52,9 +52,9 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-x-5">
           <Link
             href="https://outlook.office.com/bookwithme/user/7d3c3f6ee4e9414296cdcdc8704495b6@gse.harvard.edu?anonymous&ep=plink" target="_blank" // Redirect to the relevant page
-            className="py-2 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white"
+            className="py-2 px-8 bg-gradient-to-r from-red-700 to-red-500 text-xl font-medium rounded-md text-white hidden md:flex"
           >
-            Book an Appointment
+            Book Appointment
           </Link>
 
           <AiOutlineMenuFold className={`text-4xl md:hidden ${opened && "rotate-180"} duration-300`} onClick={() => setOpened(true)} />

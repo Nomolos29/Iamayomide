@@ -48,17 +48,17 @@ const Footer = () => {
   ]
 
   return (
-    <footer className='w-full bg-red-800 flex justify-center h-fit py-5 items-center overflow-hidden relative'>
+    <footer className='w-full bg-red-700 flex justify-center h-fit py-5 items-center overflow-hidden relative'>
         <main className='max-w-[1440px] w-full margin-auto flex flex-col justify-center items-center text-white gap-10'>
           <section className='flex flex-col w-fit justify-center items-center gap-10 py-10'>
             <Link href="/" className="w-full">
               <div className="flex items-center text-3xl">
-                <div className="h-16 w-16 rounded-full bg-red-500 text-white flex justify-center items-center">Iam</div>theayomide
+                <div className="h-16 w-16 rounded-full bg-white flex justify-center items-center text-red-700">Iam</div>theayomide
               </div>
             </Link>
           </section>
           
-          <section className='flex flex-col w-[90%] gap-5'>
+          <section className='flex flex-col w-full gap-5 px-5 md:px-10'>
             <div className='flex flex-col md:flex-row w-full justify-between pt-5'>
               {navMenu.map((Category, index) => (
                 <div key={index}>
