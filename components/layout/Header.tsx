@@ -22,7 +22,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="w-full bg-[#ffffffb0] flex justify-center items-center z-50 sticky top-0 backdrop-blur-md py-4">
+    <header className="w-full bg-[#ffffffb0] flex justify-center items-center z-50 sticky top-0 backdrop-blur-md py-4 overflow-x-hidden z-50">
       <main className="max-w-[1440px] w-full margin-auto flex justify-between items-center px-5 md:px-10 overflow-x-hidden sticky top-0">
         {/* Company Logo */}
         <Link href="/" className="w-auto md:w-[250] lg:w-[12%]">
