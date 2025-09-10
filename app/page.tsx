@@ -1,183 +1,308 @@
-// import Image from "next/image";
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
+import Testimonials from "@/components/Testimonials";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import { SOCIAL_ICONS, STATS, SITE_CONFIG } from "@/lib/constants";
+import { SocialIcon, StatItem } from "@/lib/types";
 
 
 export default function Home() {
 
-  const stats = [
-    {
-      number: "10k+",
-      name: "plus students impacted"
-    },
-    {
-      number: "20k+",
-      name: "community members"
-    },
-    {
-      number: "10+",
-      name: "projects completed"
-    }
-  ]
+  const stats: StatItem[] = STATS;
 
-  type SocialIconProp = {
-    icon: React.ReactNode;
-    link: string;
-  };
-
-  const socialIcons: SocialIconProp[] = [
-    {
-      icon: <FaFacebook />,
-      link: "#"
-    },
-    {
-      icon: <FaLinkedin />,
-      link: "https://www.linkedin.com/in/ayomidearowoloayodeji?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-    },
-    {
-      icon: <FaSquareXTwitter />,
-      link: "https://x.com/knowtheblocks_?t=VNjLr__AVfJPoU219GCj1w&s=08"
-    },
-    {
-      icon: <FaFacebook />,
-      link: "#"
-    }
-  ]
+  const socialIcons: SocialIcon[] = SOCIAL_ICONS;
 
   return (
     <main className="w-full flex flex-col justify-center items-center scroll-smooth">
-      <section className="flex justify-between items-center max-w-[1440px] w-full px-5 pt-10 pb-40 md:py-0 md:px-10 bg-blue-50">
-        <aside className="w-full md:w-1/2 flex flex-col gap-y-20">
-          <div className="flex flex-col text-center md:text-left gap-y-6 w-full">
-            <h3 className="text-xl md:text-[34px] xl:text-[40px] font-extrabold text-red-700 leading-none">Hello, I&apos;m <br /></h3>
-            <h1 className="text-[36px] md:text-[46px] xl:text-[60px] font-extrabold md:leading-none"><span className="md:text-[60px] xl:text-[90px] md:leading-none">A</span>yomide <br /><span className="md:text-[60px] xl:text-[90px] md:leading-none">A</span>rowolo-<span className="md:text-[60px] xl:text-[90px] md:leading-none">A</span>yodeji</h1>
-            <p className="text-lg md:text-xl">I&apos;m an EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities.</p>
-
-            <div className="flex gap-x-5">
-            <Link
-              href="https://outlook.office.com/bookwithme/user/7d3c3f6ee4e9414296cdcdc8704495b6@gse.harvard.edu?anonymous&ep=plink" target="_blank"
-            >
-              <button type="button" className="py-4 px-3 md:px-8 bg-gradient-to-r from-red-700 to-red-500 md:text-xl font-medium rounded-md text-white">Book Appointment</button>
-            </Link>
-              <button type="button" className="py-2 px-3 md:px-8 md:text-xl font-medium rounded-md border-2 border-red-700">More About Me</button>
-            </div>  
-          </div>
-
-        </aside>
-        <img src="/HeroImage-removebg.png" alt="Image" width={0} height={0} className="w-[500px] bg-contain hidden md:flex" />
-      </section>
-
-      <section className="flex justify-between items-center max-w-[1440px] w-full px-5 md:px-10 -mt-32 md:-mt-20">
-        <div className="w-full bg-gradient-to-b from-red-200 via-blue-100 to-white md:bg-gradient-to-r md:from-red-200 md:via-blue-100 md:to-white shadow-2xl shadow-gray-200 rounded-lg backdrop-blur-md h-[600px] md:h-[180px] flex flex-col md:flex-row justify-evenly md:justify-between items-center overflow-hidden">
-          {stats.map((stat, index) => (
-            <div key={index} className={`flex flex-col items-center justify-center text-center w-full md:w-1/3 gap-y-3 h-full ${index == 0 ? "text-red-700" : index == 1 ? "text-blue-900" : "text-gray-700"}`}>
-              <h5 className="text-5xl font-bold">{stat.number}</h5>
-              <p className="text-xl capitalize font-medium">{stat.name}</p>
+      <section className="flex justify-between items-center max-w-[1440px] w-full px-5 md:px-10 bg-gradient-to-br from-blue-50 via-white to-red-50 pt-10 md:pt-0 md:pb-10 pb-40">
+        <aside className="w-full md:w-1/2 flex flex-col gap-y-8">
+          <div className="flex flex-col text-center md:text-left gap-y-8 w-full">
+            <div className="space-y-4">
+              <h3 className="text-xl md:text-2xl font-bold text-red-700 leading-relaxed animate-fade-in-up">Hello, I&apos;m</h3>
+              <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight text-gray-900 animate-fade-in-up">
+                <span className="block">Ayomide</span>
+                <span className="block">Arowolo-Ayodeji</span>
+              </h1>
             </div>
-          ))}
-        </div>
-      </section>
 
-      <section className="flex flex-col md:flex-row justify-center items-center max-w-[1440px] gap-x-[150px] w-full py-16 md:py-28 md:px-10 px-5">
-        <div className="relative md:w-[300px] flex">
-          <div className="relative z-10">
-            <img src="/personalImage2.jpeg" alt="Image" width={0} height={0} className="h-[500px] w-[300px] bg-white backdrop-blur-sm rounded-lg shadow-md" />
-            <div className="w-[50px] h-[180px] flex flex-col justify-between items-center absolute bg-red-300/20 top-0 rounded-tl-md backdrop-blur-lg overflow-hidden">
-              {socialIcons.map((social, index) => (
-                <Link href={social.link} key={index} target="_blank" className="text-2xl flex justify-center items-center text-white hover:bg-red-400/50 h-1/4 w-full">{social.icon}</Link>
-              ))}
-            </div>
-          </div>
-          <div className="h-[500px] w-[330px] md:w-[300px] border-red-700 border-[5px] absolute top-12 -left-4 md:left-8 rounded-md"></div>
-        </div>
+            <div className="h-1 w-20 bg-red-700 mx-auto md:mx-0 animate-slide-in-right"></div>
 
-        <aside className="md:w-1/2 flex flex-col gap-y-20 pt-20 md:pt-0">
-          <div className="flex flex-col gap-y-6 md:gap-y-8">
-            <h1 className="text-[32px] md:text-[60px] font-extrabold">About Me</h1>
-            <span className="h-1 w-[100px] bg-red-700 hidden md:flex"></span>
-            <p className="text-lg line-clamp-[7]">As the founder of Know the Blocks Maven (KBM), she leads transformative initiatives that integrate AI, blockchain, and Web3 literacy into traditional education systems, empowering over 10,500 students (and counting) across Africa. Through strategic collaborations, including partnerships with the Nigerian government and the Los Angeles School District&apos;s STEM Literacy Editorial Exchange Program, Ayo pioneers efforts to bridge the digital divide and foster financial inclusion across Africa. She is also the first Web3 educator to organize a self-funded Web3 Educational Exposition for underserved communities, introducing emerging technologies to students in government senior secondary schools.</p>
-            <div className="flex gap-x-5">
-              <Link
-                href="https://outlook.office.com/bookwithme/user/7d3c3f6ee4e9414296cdcdc8704495b6@gse.harvard.edu?anonymous&ep=plink" target="_blank"
-              >
-                <button type="button" className="py-4 px-4 md:px-8 bg-gradient-to-r from-red-700 to-red-500 md:text-xl font-medium rounded-md text-white">Book Appointment</button>
+            <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-lg animate-fade-in">
+              EdTech innovator, AI literacy advocate, and blockchain educator dedicated to expanding access to emerging technologies for underserved communities worldwide.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href={SITE_CONFIG.bookingUrl} target="_blank">
+                <button type="button" className="py-4 px-8 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-800 hover:to-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  Book Consultation
+                </button>
               </Link>
-              <button type="button" className="py-2 px-4 md:px-8 md:text-xl font-medium rounded-md border-2 border-red-700">Read More</button>
+              <Link href="/more-about-me">
+                <button type="button" className="py-4 px-8 border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white font-semibold rounded-lg transition-all duration-300">
+                  Learn More About Me
+                </button>
+              </Link>
             </div>
           </div>
         </aside>
-      </section>
 
-
-      <section className="flex flex-col-reverse md:flex-row justify-between items-center max-w-[1440px] w-full py-10 px-5 md:px-10 bg-slate-50">
-        <aside className="w-full md:w-2/5 flex flex-col gap-y-20 pt-20 md:pt-0">
-          <div className="flex flex-col gap-y-6 w-full">
-            <h1 className="text-[34px] lg:text-[46px] xl:text-[60px] font-extrabold">KBM Abuja Expo</h1>
-            <p className="text-lg lg:text-xl text-[#5a5a5a]">organized a self funded Web3 Educational 
-            Exposition for the undeserved communities and senior government secondary schools with the participation of over two thousand students  in the hybrid event. </p>
+        <div className="hidden md:flex w-1/2 justify-center items-center">
+          <div className="">
+            <Image
+              src="/HeroImage-removebg.png"
+              alt="Ayomide Arowolo-Ayodeji EdTech Innovator"
+              width={450}
+              height={450}
+              className="object-contain animate-fade-in"
+              priority
+            />
           </div>
-
-        </aside>
-        
-        <aside className="relative w-full md:w-1/2 flex flex-col items-center md:items-end">
-            <div className="h-[300px] md:h-[350px] xl:h-[500px] w-[300px] md:w-[350px] xl:w-[500px] rounded-full bg-[url(/communityImage1.jpeg)] backdrop-blur-md overflow-hidden shadow-2xl bg-cover bg-center border-white/50 border-[4px]"></div>
-
-            <div className="h-[150px] w-[150px] md:h-[250px] xl:h-[350px] md:w-[250px] xl:w-[350px] rounded-full bg-[url(/communityImage2.jpeg)] backdrop-blur-md overflow-hidden shadow-2xl absolute -left-0 md:-left-20 -bottom-10 md:-bottom-20 bg-cover border-white/50 border-[4px]"></div>
-            <div className="h-[150px] w-[150px] rounded-full bg-[url(/communityImage3.jpeg)] backdrop-blur-md overflow-hidden shadow-2xl absolute -right-0 -bottom-10 md:-top-10 bg-cover bg-center border-white/50 border-[4px]"></div>
-        </aside>
-      </section>
-
-
-      <section className="flex justify-between flex-col md:flex-row items-center max-w-[1440px] w-full pt-10 md:pt-20 px-5 md:px-10 bg-white">
-        <aside className="relative w-full md:w-1/2 flex flex-col">
-            <div className="h-[300px] md:h-[600px] w-[300px] md:w-[600px] rounded-full bg-[url(/personalImage3.jpeg)] backdrop-blur-md overflow-hidden shadow-2xl bg-cover bg-center border-white/50 border-[4px]"></div>
-
-            <div className="h-20 w-80 bg-[#ffffff] rounded-lg backdrop-blur-md shadow-2xl absolute left-0 md:left-40"></div>
-            <div className="h-20 w-80 bg-[#ffffff] rounded-lg backdrop-blur-sm shadow-2xl absolute bottom-10 left-0 md:left-20"></div>
-        </aside>
-
-        <aside className="w-full md:w-2/5 flex flex-col gap-y-20 pt-10 md:pt-0">
-          <div className="flex flex-col gap-y-6 w-full">
-            <h1 className="text-[32px] md:text-[60px] font-extrabold">DKG Alumnus</h1>
-            <p className="text-lg md:text-xl text-[#5a5a5a]">First Female educator in Nigeria to be inducted into the DKG, a strong platform of women educators in the USA collaborating on ways to make an impact in the world of education by providing support or service to active teachers, shaping educational policy at the state level, and connecting international women educators, while pioneering the first chapter in Nigeria.</p>
-          </div>
-        </aside>
-      </section>
-
-      <section className="flex justify-center flex-col md:flex-row items-center max-w-[1440px] w-full py-20 px-5 md:px-10 bg-white">
-        <div className="border-[2px] border-red-700 rounded-lg w-full md:w-2/3 flex flex-col gap-y-10 p-5 md:p-10 pb-[300px] md:pb-0 md:pr-[300px]">
-          <h2 className="text-[32px] md:text-[60px] font-extrabold">As KBM Founder</h2>
-          <p className="text-gray-600">
-            
-            My passion in founding KBM stems from a personal and professional commitment to leveraging educational technology for social impact. As an EdTech educator and AI literacy advocate, I have seen how disparities in technological education not only limit career aspirations but also hinder personal and cognitive development. 
-            I already understand that access to emerging technologies is not just about infrastructure but also about fostering a mindset shift. Many students in underserved communities face structural and psychological barriers that limit their ability to see themselves as future professionals in these technologies. Additionally, career development interventions often focus on traditional pathways without fully considering how digital transformation is reshaping job markets.
-          </p>
         </div>
-        <div className="bg-white rounded-md shadow-2xl my-10 border-b-[2px] border-red-700 w-fit p-5 md:p-10 -mt-[250px] md:mt-0 md:-ml-[200px] flex flex-col items-center gap-5">
-          <h1 className="text-[28px] md:text-[34px]">Contact Me</h1>
-          <form className="flex flex-col gap-5">
-            <div className="flex flex-col md:flex-row gap-5">
-              <input required type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md" />
+      </section>
 
-              <input required type="text" name="" id="" placeholder="Firstname" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md" />
+
+      <section className="w-full pb-20 md:pb-32 bg-gray-50 relative">
+        <section className="w-full -mt-28 z-10 absolute">
+          <div className="max-w-[1440px] w-full mx-auto px-5 md:px-10">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                {stats.map((stat, index) => {
+                  const numericValue = parseInt(stat.number.replace(/[^0-9]/g, ''));
+                  const suffix = stat.number.replace(/[0-9]/g, '');
+                  return (
+                    <div key={index} className="flex flex-col items-center justify-center text-center group hover:scale-105 transition-all duration-300">
+                      <div className={`text-5xl md:text-6xl font-extrabold mb-4 ${index === 0 ? "text-red-700" : index === 1 ? "text-blue-700" : "text-gray-700"}`}>
+                        <AnimatedCounter
+                          end={numericValue}
+                          suffix={suffix}
+                          className="block"
+                        />
+                      </div>
+                      <div className="h-1 w-12 bg-red-700 mb-4 group-hover:w-16 transition-all duration-300"></div>
+                      <p className="text-lg font-semibold text-gray-800 capitalize leading-relaxed max-w-xs">
+                        {stat.name}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <div className="max-w-[1440px] w-full mx-auto px-5 md:px-10 md:pt-48 pt-[100%]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="relative z-10">
+                <Image
+                  src="/personalImage2.jpeg"
+                  alt="Ayomide Arowolo-Ayodeji Professional Photo"
+                  width={400}
+                  height={500}
+                  className="w-full max-w-[400px] h-[500px] object-cover rounded-2xl shadow-2xl mx-auto"
+                />
+
+                <div className="absolute top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl">
+                  <div className="flex flex-col items-center space-y-4">
+                    {socialIcons.map((social, index) => (
+                      <Link
+                        href={social.link}
+                        key={index}
+                        target="_blank"
+                        className="text-2xl text-red-700 hover:text-red-600 hover:scale-110 transition-all duration-300"
+                      >
+                        {social.icon}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -top-6 -left-6 w-full h-full border-4 border-red-700 rounded-2xl -z-10"></div>
             </div>
 
-            <input required type="email" name="" id="" placeholder="Email Address" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md w-full" />
+            <div className="space-y-8 order-1 lg:order-2">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                    About Me
+                  </h2>
+                  <div className="h-1 w-20 bg-red-700"></div>
+                </div>
 
-            <input required type="text" name="" id="" placeholder="Location" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border px-2 py-2 rounded-md w-full" />
+                <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                  As the founder of <span className="font-semibold text-red-700">Know the Blocks Maven (KBM)</span>, I lead transformative initiatives that integrate AI, blockchain, and Web3 literacy into traditional education systems, empowering over <span className="font-semibold">10,500 students</span> across Africa.
+                </p>
 
-            <textarea name="" id="" rows={5} required placeholder="Reason for contacting" className="border-[#d2d2d2] outline-red-700 hover:bg-[#f7f7f7c9] hover:cursor-pointer border p-2 rounded-md"></textarea>
-          </form>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Through strategic collaborations with the Nigerian government and the Los Angeles School District&apos;s STEM Literacy Editorial Exchange Program, I pioneer efforts to bridge the digital divide and foster financial inclusion across Africa. I&apos;m also the first Web3 educator to organize a self-funded Web3 Educational Exposition for underserved communities.
+                </p>
+              </div>
 
-          <div className="h-[50px] flex justify-between items-center p-3 gap-5">
-            {socialIcons.map((social, index) => (
-              <Link href={social.link} key={index} className="text-2xl text-red-700">{social.icon}</Link>
-            ))}
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link href={SITE_CONFIG.bookingUrl} target="_blank">
+                  <button type="button" className="py-4 px-8 bg-gradient-to-r from-red-700 to-red-600 hover:from-red-800 hover:to-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    Schedule Meeting
+                  </button>
+                </Link>
+                <Link href="/more-about-me">
+                  <button type="button" className="py-4 px-8 border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white font-semibold rounded-lg transition-all duration-300">
+                    Read Full Story
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="h-[2px] w-20 bg-red-700"></div>
+
+      <section className="w-full py-20 md:py-32 bg-white">
+        <div className="max-w-[1440px] w-full mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                    KBM Abuja <span className="text-red-700">Expo</span>
+                  </h2>
+                  <div className="h-1 w-20 bg-red-700"></div>
+                </div>
+
+                <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                  Organized a self-funded Web3 Educational Exposition for underserved communities and senior government secondary schools with the participation of over <span className="font-semibold text-red-700">2,000 students</span> in the hybrid event.
+                </p>
+
+                <div className="bg-red-50 border-l-4 border-red-700 p-6 rounded-r-lg">
+                  <p className="text-gray-800 font-medium">
+                    First of its kind in Nigeria - bridging the gap between emerging technologies and traditional education systems in underserved communities.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative flex justify-center items-center">
+              <div className="relative">
+                <div className="h-[400px] w-[400px] rounded-full bg-[url(/communityImage1.jpeg)] bg-cover bg-center shadow-2xl border-8 border-white"></div>
+
+                <div className="absolute -bottom-8 -left-8 h-[200px] w-[200px] rounded-full bg-[url(/communityImage2.jpeg)] bg-cover bg-center shadow-xl border-4 border-white"></div>
+
+                <div className="absolute -top-8 -right-8 h-[150px] w-[150px] rounded-full bg-[url(/communityImage3.jpeg)] bg-cover bg-center shadow-xl border-4 border-white"></div>
+
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl px-6 py-4 shadow-xl">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-red-700">2,000+</div>
+                    <div className="text-sm text-gray-600 font-medium">Students Reached</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="w-full py-20 md:py-32 bg-gray-50">
+        <div className="max-w-[1440px] w-full mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="relative flex justify-center items-center">
+                <div className="relative">
+                  <div className="h-[450px] w-[450px] rounded-full bg-[url(/personalImage3.jpeg)] bg-cover bg-center shadow-2xl border-8 border-white"></div>
+
+                  <div className="absolute top-8 left-8 bg-white rounded-2xl px-6 py-4 shadow-xl">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-red-700">First</div>
+                      <div className="text-sm text-gray-600 font-medium">in Nigeria</div>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-8 right-8 bg-white rounded-2xl px-6 py-4 shadow-xl">
+                    <div className="text-center">
+                      <div className="text-lg font-bold text-blue-700">DKG</div>
+                      <div className="text-sm text-gray-600 font-medium">Member</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8 order-1 lg:order-2">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                    DKG <span className="text-red-700">Alumnus</span>
+                  </h2>
+                  <div className="h-1 w-20 bg-red-700"></div>
+                </div>
+
+                <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                  <span className="font-semibold text-red-700">First Female educator in Nigeria</span> to be inducted into the DKG (Delta Kappa Gamma Society International), a prestigious platform of women educators collaborating on ways to make an impact in the world of education.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-red-700 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Providing support and service to active teachers</p>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-red-700 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Shaping educational policy at the state level</p>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-red-700 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Connecting international women educators</p>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-2 h-2 bg-red-700 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Pioneering the first chapter in Nigeria</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Testimonials />
+
+      <section className="w-full py-20 md:py-32 bg-white">
+        <div className="max-w-[1440px] w-full mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                    As <span className="text-red-700">KBM</span> Founder
+                  </h2>
+                  <div className="h-1 w-20 bg-red-700"></div>
+                </div>
+
+                <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <p className="text-lg">
+                    My passion in founding KBM stems from a personal and professional commitment to leveraging educational technology for social impact. As an EdTech educator and AI literacy advocate, I have witnessed how disparities in technological education not only limit career aspirations but also hinder personal and cognitive development.
+                  </p>
+
+                  <p className="text-lg">
+                    I understand that access to emerging technologies is not just about infrastructure but also about fostering a mindset shift. Many students in underserved communities face structural and psychological barriers that limit their ability to see themselves as future professionals in these technologies.
+                  </p>
+
+                  <div className="bg-red-50 border-l-4 border-red-700 p-6 rounded-r-lg">
+                    <p className="text-gray-800 font-medium italic">
+                      &ldquo;Career development interventions must consider how digital transformation is reshaping job markets and create pathways that bridge traditional education with emerging opportunities.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:pl-8">
+              <ContactForm socialIcons={socialIcons} />
+            </div>
+          </div>
         </div>
       </section>
     </main>
