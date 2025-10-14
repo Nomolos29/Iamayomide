@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 import { ProjectItem } from '@/lib/types';
+import ProjectDeepDiveSection from '@/components/portfolio-contents/ProjectDeepDiveSection';
 
 const Portfolio = () => {
   const projects: ProjectItem[] = [
@@ -80,6 +81,7 @@ const Portfolio = () => {
   const otherProjects = projects.filter(project => !project.featured);
 
   return (
+    <main>
     <main className="w-full flex flex-col justify-center items-center">
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-b from-blue-50 to-white py-16 md:py-24">
@@ -227,7 +229,11 @@ const Portfolio = () => {
             </button>
           </Link>
         </div>
+        
       </section>
+      
+    </main>
+    <ProjectDeepDiveSection />
     </main>
   );
 };
