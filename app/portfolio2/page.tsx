@@ -21,11 +21,10 @@ export default function PortfolioPage() {
       <ProjectCarousel03 />
       <ProjectCarousel04 />
       <ProjectSection05 />
-      <ProjectCarousel06 /> 
-      {/* The rest of your portfolio page content will go below this header... */}
+      <ProjectCarousel06 />  
       <div className="container mx-auto p-8">
         <h2 className="text-3xl font-bold">My Work</h2>
-        {/* ... */}
+   
       </div>
     </main>
   );
