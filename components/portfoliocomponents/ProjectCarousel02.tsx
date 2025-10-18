@@ -14,7 +14,8 @@ const slidesData02: { header: ReactNode; content: ReactNode }[] = [
   { header: <ProjectHeader04 />, content: <ProjectSlide09 /> },  
   { header: <ProjectHeader04 />, content: <ProjectSlide11 /> },
   { header: <ProjectHeader04 />, content: <ProjectSlide10 /> }
- 
+
+  
 ];
 
 const DecorativeSideBorder02: FC = () => (
