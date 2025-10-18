@@ -4,6 +4,7 @@ import { Header, Footer } from "@/components"
 import BackToTop from "@/components/BackToTop";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import "./globals.css";
+import { Lora, Bricolage_Grotesque, Poppins } from 'next/font/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,6 +14,25 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+// Configure Lora (your existing serif font)
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+  display: 'swap',
+});
+ 
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  variable: '--font-bricolage',
+  display: 'swap',
+});
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700'],  
+  variable: '--font-poppins',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -63,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${lora.variable} ${bricolage.variable} ${poppins.variable}`} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-between min-h-screen bg-background text-foreground transition-colors duration-300`}
       >
