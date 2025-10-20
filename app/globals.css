@@ -1,7 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* In your globals.css or equivalent */
+.custom-gradient-bg {
+  background-image: radial-gradient(
+    at 90% 10%, /* Adjust position to fine-tune the "oval shaped 7B0D29 at the right" */
+    #7B0D29 0%, /* Inner color */
+    #BD1842 80% /* Outer color */
+  );
 
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -40,6 +48,32 @@ body {
   background: #991b1b;
 }
 
+/* In your globals.css */
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #bd1842; /* Color of the scroll thumb (brand-red) */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7a0d29; /* Color of the scroll thumb on hover (brand-red-dark) */
+}
+
+/* For Firefox (different syntax) */
+.custom-scrollbar {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #bd1842 #f1f1f1; /* thumb color track color */
+}
 /* Smooth transitions for all elements */
 * {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
